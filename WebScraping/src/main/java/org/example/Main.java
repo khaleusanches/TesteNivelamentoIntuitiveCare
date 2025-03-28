@@ -9,52 +9,28 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos";
-        int leitor = 0;
-        try {
-            Document page = Jsoup.connect(url).get();
-            Elements elements = page.select("a.internal-link");
 
-            URL url_anexo_I = getUrlAnexo(elements, "Anexo I.");
-            URL url_anexo_II = getUrlAnexo(elements, "Anexo II.");
+        String url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos";
+        Scrapper scrapper = new Scrapper(url, "a.internal-link");
+        PDFDownloader downloader = new PDFDownloader();
+        Compactor compactor = new Compactor();
+
+        try {
+            URL url_anexo_I = scrapper.getUrlAnexo("Anexo I.");
+            URL url_anexo_II = scrapper.getUrlAnexo("Anexo II.");
+
             File anexo_I = new File("anexo_I.pdf");
             File anexo_II = new File("anexo_II.pdf");
-            downloadFile(url_anexo_I, anexo_I);
-            downloadFile(url_anexo_II, anexo_II);
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            downloader.downloadFile(url_anexo_I, anexo_I);
+            downloader.downloadFile(url_anexo_II, anexo_II);
+            compactor.compact(List.of(anexo_I, anexo_II));
         }
-
-    }
-    private static void downloadFile (URL url_anexo, File anexo) {
-        try{
-            InputStream read_anexo = url_anexo.openStream();
-            FileOutputStream copy_anexo = new FileOutputStream(anexo);
-            for (int copy = read_anexo.read(); copy > -1; copy = read_anexo.read()) {
-                copy_anexo.write(copy);
-            }
-            read_anexo.close();
-            copy_anexo.close();
-        }
-        catch (Exception e){
-            throw new RuntimeException(e);
-        }
-    }
-    private static URL getUrlAnexo(Elements elements, String text) {
-        URL url_anexo;
-        try {
-            for (Element element : elements) {
-                if(element.text().equals(text)) {
-                    url_anexo = new URL(element.attr("abs:href"));
-                    return url_anexo;
-                }
-            }
-            return null;
-        } catch (MalformedURLException e) {
+        catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
