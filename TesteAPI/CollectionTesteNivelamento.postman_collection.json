@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "f349679e-6405-4c4c-a67b-9cc896db68d2",
+		"name": "CollectionTesteNivelamento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41970999"
+	},
+	"item": [
+		{
+			"name": "search: Administradora",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/administradora",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"administradora"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search: CNPJ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/09585273000110",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"09585273000110"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search: Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ans@hapvida.com.br",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ans@hapvida.com.br"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
