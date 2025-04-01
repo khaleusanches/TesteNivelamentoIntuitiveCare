@@ -49,5 +49,11 @@ export default {
 
 .boxinbox{
     margin-bottom: 15px;
+    border-radius: 15px;
+}
+.boxinbox:hover{
+    -webkit-box-shadow: -1px 4px 5px 4px rgba(200, 164, 244, 0.45);
+    -moz-box-shadow: -1px 4px 5px 4px rgba(200, 164, 244,0.45);
+    box-shadow: -1px 4px 5px 4px rgba(200, 164, 244,0.45);
 }
 </style>

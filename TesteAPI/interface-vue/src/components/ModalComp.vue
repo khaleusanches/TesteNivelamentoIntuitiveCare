@@ -45,10 +45,19 @@ export default {
 .modal-body p{
     text-align: left;
 }
+.modal-dialog{
+  border-radius: 15px;
+  -webkit-box-shadow: -1px 4px 5px 4px rgba(200, 164, 244, 0.288);
+  -moz-box-shadow: -1px 4px 5px 4px rgba(200, 164, 244, 0.103);
+  box-shadow: -1px 4px 5px 4px rgba(200, 164, 244,0.45);
+}
 .btn_close{
-    background-color: rgba(200, 164, 244, 0.39);
+  color: rgb(34, 28, 41);
+  font-weight: bold;
+  background-color: rgba(200, 164, 244);
 }
 .btn_close:hover{
-    background-color: rgb(200, 164, 244);
+  color: rgb(200, 164, 244);
+  background-color: rgb(19, 16, 24);
 }
 </style>
