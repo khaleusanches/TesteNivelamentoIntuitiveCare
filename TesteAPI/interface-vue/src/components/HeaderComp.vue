@@ -41,16 +41,18 @@ img{
     width: 175px;
 }
 .activee{
-    color: rgb(200, 164, 244);
-    background-color: rgba(200, 164, 244, 0.39);
+    color: rgb(34, 28, 41);
+    background-color: rgba(200, 164, 244);
     padding-left: 24px;
     padding-right: 24px;
+    border: 1px, solid rgb(34, 28, 41);
     width: 100px;
     border-radius: 8px;
+    font-weight: bold;
 }
 a:hover{
-    color: black;
-    background-color: rgba(200, 164, 244);
+    color: rgb(200, 164, 244);
+    background-color: rgb(19, 16, 24);
     border-radius: 8px;
 }
 a{
@@ -60,6 +62,7 @@ a{
 .btn-search{
     border: 2px solid rgb(200, 164, 244);
     color: rgb(146, 67, 241);
+    font-weight: bold;
 }
 .btn-search:hover{
     border: 2px solid rgb(200, 164, 244);
