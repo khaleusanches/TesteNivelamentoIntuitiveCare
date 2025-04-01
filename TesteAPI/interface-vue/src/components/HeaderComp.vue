@@ -6,7 +6,7 @@
                     <img src="../assets/logo.png" alt="Logo" class="mt-8">
                 </a>
                 <div class="navbar-nav">
-                    <a class="nav-link activee" aria-current="page" href="#">Home</a>
+                    <a class="nav-link activee" aria-current="page" href="/">Home</a>
                 </div>
                 <form class="d-flex">
                     <input class="form-control me-2 form-search" type="search" v-model="search" placeholder="Search" aria-label="Search">

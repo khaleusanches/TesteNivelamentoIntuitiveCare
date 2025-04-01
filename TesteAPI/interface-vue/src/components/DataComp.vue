@@ -1,7 +1,8 @@
 <template>
     <div class="box">
         <div class="boxinbox" v-for="(operadora, index) in operadoras" :key="index">
-            <CardComp :dadoss="operadora" />
+            <ModalComp :dados="operadora" :id="index"/>
+            <CardComp :dados="operadora" data-bs-toggle="modal" :data-bs-target="'#'+index"/> 
         </div>
     </div>
 </template>
@@ -9,9 +10,10 @@
 <script>
 import CardComp from '@/components/CardComp.vue'
 import api from '@/services/api';
+import ModalComp from './ModalComp.vue';
 export default {
     name: "DataComp",
-    components: {CardComp},
+    components: {CardComp, ModalComp},
     props: {
       search: String
     },

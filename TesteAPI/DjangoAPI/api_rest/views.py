@@ -8,14 +8,7 @@ from rest_framework import status
 from .models import OperadoraAtiva
 from .serializer import OperadoraAtivaSerializer
 
-import json
 import csv
-
-@api_view(['GET'])
-def get_operadoras(request):
-    if request.method == 'GET':
-        return Response([{"pene":"macarrao"}])
-    return Response(status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
 def get_operadora(request, search):

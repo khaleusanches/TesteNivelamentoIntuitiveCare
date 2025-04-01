@@ -6,7 +6,6 @@
 <script>
 import HeaderComp from '@/components/HeaderComp.vue';
 import DataComp from '@/components/DataComp.vue'
-
 export default {
     props: ['search'],
     name: "DataPage",
